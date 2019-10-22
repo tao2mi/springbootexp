@@ -1,14 +1,14 @@
 spring:
   cache:
     redis:
-      time-to-live: 3600
+      time-to-live: PT10000S
       use-key-prefix: true
       key-prefix: payment_cache_
 
   redis:
-    host: 10.105.10.72
+    host: 127.0.0.1
     port: 6379
-    password: clab@2019
+    password: ybq
     database: 2
     jedis:
       pool:

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CacheController {
 
     @RequestMapping
-    @Cacheable(value = "cache1")
+    @Cacheable(value="users", key="'mykey1_'+#param")
     public String hello(String param) {
         return "aaa";
     }
