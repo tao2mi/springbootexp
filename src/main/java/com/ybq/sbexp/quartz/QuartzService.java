@@ -1,4 +1,4 @@
-package com.ybq.sbexp.entiry;
+package com.ybq.sbexp.quartz;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

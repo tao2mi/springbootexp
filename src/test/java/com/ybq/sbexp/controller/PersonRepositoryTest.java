@@ -1,5 +1,8 @@
 package com.ybq.sbexp.controller;
 
+import com.ybq.sbexp.Application;
+import com.ybq.sbexp.dao.PersonRepository;
+import com.ybq.sbexp.entiry.Person;
 import com.ybq.sbexp.service.UserService;
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,27 +14,27 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.mockito.Mockito.*;
+
+import java.util.List;
+
+import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
-public class CacheControllerTest {
+@SpringBootTest(classes = Application.class)
+public class PersonRepositoryTest {
 
     @Autowired
-    private CacheController controller;
-    @Autowired
-    private MockMvc mockMvc;
-    @MockBean
-    private UserService userService;
-
-    @Before
-    public void setUp() throws Exception {
-    }
+    private PersonRepository personRepository;
 
     @Test
     public void hello() {
-        when(userService.say("nihao")).thenReturn("good");
-        Assert.assertEquals("good", userService.say("nihao"));
+        Person person = new Person();
+        person.setAge(1);
+        person.setName("ybq");
+        personRepository.save(person);
+        System.out.println("id: " + person.getId());
+
+        List<Person> all = personRepository.findAll();
+        System.out.println(all.size());
     }
 }
