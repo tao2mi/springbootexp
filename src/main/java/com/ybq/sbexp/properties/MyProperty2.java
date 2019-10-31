@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-@PropertySource("p1.properties")
+@PropertySource("classpath:p1.properties")
 @ConfigurationProperties(prefix = "he")
 @Component
 public class MyProperty2 {

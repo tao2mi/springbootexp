@@ -14,12 +14,14 @@ import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.time.Duration;
 
 @EnableScheduling
 @SpringBootApplication(exclude = RedisAutoConfiguration.class)
 @EnableCaching
+@EnableSwagger2
 public class Application extends SpringBootServletInitializer {
 
 
