@@ -9,6 +9,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -39,5 +40,12 @@ public class CacheController {
 
         return myProperty2.getName();
         //return "b";
+    }
+
+    @RequestMapping("person3")
+    public String hello3(HttpServletRequest request) {
+        String sessionId = request.getSession().getId();
+        //request.getSession().setAttribute("name", "yangbaoqing");
+        return sessionId;
     }
 }
