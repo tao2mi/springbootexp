@@ -18,10 +18,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.time.Duration;
 
-@EnableScheduling
+//@EnableScheduling
 @SpringBootApplication(exclude = RedisAutoConfiguration.class)
-@EnableCaching
-@EnableSwagger2
+//@EnableCaching
+//@EnableSwagger2
 public class Application extends SpringBootServletInitializer {
 
 

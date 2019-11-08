@@ -19,6 +19,7 @@ spring:
 logging:
   level:
     root: info
+  file: yanglog.txt
 
 my:
   name: yyy
