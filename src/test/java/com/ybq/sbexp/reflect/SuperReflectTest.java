@@ -1,8 +1,8 @@
 package com.ybq.sbexp.reflect;
 
 public class SuperReflectTest {
-    private String superName1;
-    public String superName2;
+    private String superName1 = "sybq";
+    public String superName2 = "syang";
 
     public String getSuperName2() {
         return superName2;
