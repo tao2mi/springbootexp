@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -22,11 +23,13 @@ import java.time.Duration;
 @SpringBootApplication(exclude = RedisAutoConfiguration.class)
 //@EnableCaching
 //@EnableSwagger2
+@ServletComponentScan
 public class Application extends SpringBootServletInitializer {
 
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Application.class, args);
+
     }
 
     /*@Bean
