@@ -2,7 +2,6 @@ package com.ybq.sbexp.annotation;
 
 import com.ybq.sbexp.controller.BizRequest;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -13,11 +12,14 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 
+/**
+ * @author yangb
+ */
 @Aspect
 @Component
 public class ParamAspect {
 
-    @Pointcut("@annotation(com.ybq.sbexp.annotation.ParamAnnotaion)")
+    @Pointcut("@annotation(com.ybq.sbexp.annotation.ParamAnnotation)")
     public void pointCut() {
 
     }
@@ -29,7 +31,7 @@ public class ParamAspect {
         System.out.println(joinPoint.getSignature());
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
-        ParamAnnotaion annotaion = method.getAnnotation(ParamAnnotaion.class);
+        ParamAnnotation annotaion = method.getAnnotation(ParamAnnotation.class);
         String[] value = annotaion.value();
         for (String p : value) {
             Field declaredField = BizRequest.class.getDeclaredField(p);
