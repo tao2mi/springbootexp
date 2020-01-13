@@ -29,7 +29,7 @@ public class ReentrantLockTest {
         Thread t1 = new Thread(r, "t1");
         t1.start();
 
-        Thread.sleep(1000);
+        Thread.sleep(10000);
         lock.unlock();
         lock.unlock();
         lock.unlock();
