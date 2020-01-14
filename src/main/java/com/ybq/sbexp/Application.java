@@ -13,15 +13,13 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.time.Duration;
 
 //@EnableScheduling
-@SpringBootApplication(exclude = RedisAutoConfiguration.class)
-//@EnableCaching
+//@SpringBootApplication(exclude = RedisAutoConfiguration.class)
+@EnableCaching
+@SpringBootApplication
 //@EnableSwagger2
 @ServletComponentScan
 public class Application extends SpringBootServletInitializer {
@@ -32,7 +30,7 @@ public class Application extends SpringBootServletInitializer {
 
     }
 
-    /*@Bean
+   /* @Bean
     public CacheManager getCacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofHours(1)); // 设置缓存有效期一小时
