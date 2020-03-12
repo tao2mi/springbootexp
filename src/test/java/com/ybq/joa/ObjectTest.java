@@ -20,3 +20,6 @@ public class ObjectTest {
         System.out.println(classLayout);
     }
 }
+
+// IDEA 查看代码反汇编代码
+// https://blog.csdn.net/weixin_40739833/article/details/81301577
