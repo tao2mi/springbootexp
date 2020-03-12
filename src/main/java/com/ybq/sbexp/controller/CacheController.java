@@ -6,6 +6,8 @@ import com.ybq.sbexp.properties.MyProperty;
 import com.ybq.sbexp.properties.MyProperty2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -47,5 +49,12 @@ public class CacheController {
         String sessionId = request.getSession().getId();
         //request.getSession().setAttribute("name", "yangbaoqing");
         return sessionId;
+    }
+
+
+    @PostMapping("test")
+    public Person test(@RequestBody Person person) {
+        //person.setName("重");
+        return person;
     }
 }

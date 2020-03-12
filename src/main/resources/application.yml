@@ -1,1 +1,5 @@
 debug: true
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
