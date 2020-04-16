@@ -1,4 +1,4 @@
-package com.ybq.joa;
+package com.ybq.jol;
 
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.vm.VM;
@@ -6,6 +6,9 @@ import org.openjdk.jol.vm.VM;
 import java.nio.ByteOrder;
 
 public class ObjectTest {
+
+    private int name;
+    private String hhh;
 
     public static void main(String[] args) {
         ObjectTest object = new ObjectTest();

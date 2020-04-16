@@ -53,7 +53,7 @@ public class CacheController {
 
 
     @PostMapping("test")
-    public Person test(@RequestBody Person person) {
+    public Person test(Person person) {
         //person.setName("重");
         return person;
     }
